@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intro to Java - Beginner Mini Course</title>
+  <style>
+    :root {
+      --primary: #2d3e50;
+      --accent: #007bff;
+      --background: #f4f4f4;
+      --card-bg: #fff;
+      --text: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header, footer {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 20px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    section {
+      background-color: var(--card-bg);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    h3, h4 {
+      margin-top: 20px;
+      color: var(--primary);
+    }
+
+    pre {
+      background-color: #efefef;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      main {
+        padding: 10px;
+      }
+
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Intro to Java - Beginner Mini Course</h1>
+    <p>Learn Java step by step with simple explanations and practical code</p>
+  </header>
+
+  <main>
+  <section>
+    <h2>Module 1: Introduction to Java</h2>
+    <p>Java is a high-level, class-based, object-oriented programming language. It is widely used due to its portability, performance, and security features.</p>
+    <h3>Advantages of Java</h3>
+    <ul>
+      <li>Platform Independent (Write Once, Run Anywhere)</li>
+      <li>Object-Oriented</li>
+      <li>Secure</li>
+      <li>Robust and Reliable</li>
+    </ul>
+    <h3>How Java Achieves Cross-Platform</h3>
+    <p>Java uses the Java Virtual Machine (JVM) to run bytecode, which allows the same program to run on any device with a JVM installed.</p>
+    <h3>Installing Java and Setting Up</h3>
+    <ul>
+      <li>Download JDK from Oracle's website</li>
+      <li>Install and set environment variables (JAVA_HOME and PATH)</li>
+      <li>Use a code editor like VSCode or IntelliJ</li>
+    </ul>
+    <h3>First Java Program</h3>
+    <pre><code>// This is a simple Java program
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Prints text to the screen
+        System.out.println("Hello, world!");
+    }
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>Module 2: Variables and Data Types</h2>
+    <p>Variables store data and are the building blocks of any program.</p>
+    <h3>Common Data Types:</h3>
+    <ul>
+      <li><code>int</code> - integers</li>
+      <li><code>double</code> - decimal numbers</li>
+      <li><code>char</code> - single characters</li>
+      <li><code>boolean</code> - true or false</li>
+      <li><code>String</code> - text</li>
+    </ul>
+    <h3>Rules to Consider When Naming a Variable</h3>
+    <ul>
+      <li>Must start with a letter, <code>$</code>, or <code>_</code></li>
+      <li>Cannot use spaces</li>
+      <li>Should be meaningful</li>
+      <li>Java is case-sensitive</li>
+    </ul>
+    <pre><code>// Declaring variables
+int age = 25;
+double price = 19.99;
+char grade = 'A';
+boolean isJavaFun = true;
+String name = "Alice";</code></pre>
+  </section>
+
+<section>
+  <h2>Module 3: Control Structures</h2>
+  <p>Control structures let you control the flow of execution in your program using conditions and loops.</p>
+
+  <h3>1. If-Else Statement</h3>
+  <p>This checks a condition and runs different code based on whether it’s true or false.</p>
+  <pre><code>// Declare a variable to hold age
+int age = 18;
+
+// Check if age is 18 or more
+if (age >= 18) {
+    // If true, this block will execute
+    System.out.println("You are an adult.");
+} else {
+    // If false, this block will execute instead
+    System.out.println("You are not an adult.");
+}
+</code></pre>
+
+  <h3>2. Switch Statement</h3>
+  <p>Use switch to handle multiple conditions based on the same variable.</p>
+  <pre><code>// Declare a grade variable
+char grade = 'B';
+
+// Switch checks the value of grade
+switch (grade) {
+    case 'A':
+        // If grade is A
+        System.out.println("Excellent!");
+        break;
+    case 'B':
+        // If grade is B
+        System.out.println("Good job!");
+        break;
+    case 'C':
+        // If grade is C
+        System.out.println("You passed.");
+        break;
+    default:
+        // If grade is none of the above
+        System.out.println("Grade not recognized.");
+}
+</code></pre>
+
+  <h3>3. While Loop</h3>
+  <p>Repeats code while a condition is true.</p>
+  <pre><code>// Start counting from 1
+int i = 1;
+
+// Run the loop as long as i is less than or equal to 5
+while (i <= 5) {
+    // Print the current value of i
+    System.out.println("Count: " + i);
+
+    // Increase i by 1 to avoid infinite loop
+    i++;
+}
+</code></pre>
+
+  <h3>4. For Loop</h3>
+  <p>Used when you know how many times to run the loop.</p>
+  <pre><code>// Loop from 1 to 5
+for (int i = 1; i <= 5; i++) {
+    // Print the step number
+    System.out.println("Step: " + i);
+}
+</code></pre>
+
+  <h3>5. Do-While Loop</h3>
+  <p>Runs the code at least once, then checks the condition.</p>
+  <pre><code>// Start i at 1
+int i = 1;
+
+// Run the loop at least once before checking the condition
+do {
+    // Print the current number
+    System.out.println("Iteration: " + i);
+
+    // Increase i
+    i++;
+} while (i <= 5); // Repeat while i is less than or equal to 5
+</code></pre>
+
+  <h3>6. Nested Loops (Loops inside loops)</h3>
+  <p>You can place one loop inside another to perform repeated tasks within repeated tasks. This is useful for working with patterns, tables, or grids.</p>
+
+  <p>Example: Print a simple star pattern (a square of stars):</p>
+  <pre><code>// Outer loop controls the rows
+for (int row = 1; row <= 4; row++) {
+    // Inner loop controls the columns (stars in each row)
+    for (int col = 1; col <= 4; col++) {
+        System.out.print("* ");  // Print star and space, stay on the same line
+    }
+    System.out.println();  // Move to next line after inner loop finishes
+}
+</code></pre>
+
+  <p><strong>Output:</strong></p>
+  <pre><code>
+* * * * 
+* * * * 
+* * * * 
+* * * * 
+</code></pre>
+
+  <p>Example 2: Print a right-angled triangle star pattern:</p>
+  <pre><code>// Outer loop controls the rows
+for (int row = 1; row <= 5; row++) {
+    // Inner loop prints stars equal to current row number
+    for (int col = 1; col <= row; col++) {
+        System.out.print("* ");
+    }
+    System.out.println(); // Move to the next line
+}
+</code></pre>
+
+  <p><strong>Output:</strong></p>
+  <pre><code>
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+</code></pre>
+
+  <p><em>Tip:</em> Nested loops can be used for more complex tasks like working with 2D arrays or creating tables.</p>
+</section>
+
+
+<section>
+  <h2>Module 4: Arrays</h2>
+  <p>Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.</p>
+
+  <h3>What is an Array?</h3>
+  <p>An array is a container that holds a fixed number of values of the same type. Each value is called an element, and each element has an index starting from <code>0</code>.</p>
+
+  <h3>Declaring and Initializing Arrays</h3>
+  <pre><code>// Declare an array of integers with 5 elements
+int[] numbers = new int[5];
+
+// Initialize an array with values
+String[] fruits = {"Apple", "Banana", "Cherry"};
+</code></pre>
+
+  <h3>Accessing Array Elements</h3>
+  <p>You access array elements using their index inside square brackets <code>[]</code>. Remember, arrays start at index 0.</p>
+  <pre><code>// Access first element
+System.out.println(fruits[0]);  // Prints "Apple"
+
+// Change the value of the second element
+fruits[1] = "Blueberry";
+System.out.println(fruits[1]);  // Prints "Blueberry"
+</code></pre>
+
+  <h3>Looping Through Arrays</h3>
+  <p>You often use loops to go through each element of an array.</p>
+  <pre><code>// Using a for loop to print all fruits
+for (int i = 0; i < fruits.length; i++) {
+    System.out.println(fruits[i]);
+}
+</code></pre>
+
+  <h3>Important Points</h3>
+  <ul>
+    <li>Array size is fixed after creation; you cannot change it later.</li>
+    <li>Trying to access an index outside the array length causes an <code>ArrayIndexOutOfBoundsException</code>.</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>Module 5: Object-Oriented Programming (OOP) Basics</h2>
+  <p>OOP helps you organize code into reusable objects. It focuses on creating classes, objects, and using real-world concepts like inheritance, encapsulation, and polymorphism.</p>
+
+  <h3>1. Classes and Objects</h3>
+  <p>A class is a blueprint. An object is an instance (real version) of that blueprint.</p>
+  <pre><code>// Define a class called Car
+public class Car {
+    // Property (field) of the class
+    String color;
+
+    // Method to display car color
+    void displayColor() {
+        System.out.println("The car color is: " + color);
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        // Create an object (instance) of Car
+        Car myCar = new Car();
+
+        // Set the color of the car
+        myCar.color = "Red";
+
+        // Call the method to display the color
+        myCar.displayColor();
+    }
+}
+</code></pre>
+
+  <h3>2. Encapsulation</h3>
+  <p>Encapsulation hides the data and only exposes what is necessary. You use <code>private</code> fields and <code>getters</code> / <code>setters</code>.</p>
+  <pre><code>// Define a class with encapsulated fields
+public class Person {
+    // Private field - cannot be accessed directly from outside
+    private String name;
+
+    // Setter method - to set value
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    // Getter method - to get value
+    public String getName() {
+        return name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a Person object
+        Person p = new Person();
+
+        // Set the name using the setter
+        p.setName("Kalos");
+
+        // Get and print the name using the getter
+        System.out.println("Name: " + p.getName());
+    }
+}
+</code></pre>
+
+  <h3>3. Inheritance</h3>
+  <p>Inheritance allows one class to reuse the properties of another. We use <code>extends</code> keyword.</p>
+  <pre><code>// Parent class
+class Animal {
+    void speak() {
+        System.out.println("Animal speaks");
+    }
+}
+
+// Child class that inherits from Animal
+class Dog extends Animal {
+    // Additional method
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a Dog object
+        Dog d = new Dog();
+
+        // Call inherited method
+        d.speak();
+
+        // Call its own method
+        d.bark();
+    }
+}
+</code></pre>
+
+  <h3>4. Polymorphism</h3>
+  <p>Polymorphism means many forms. Java lets you override methods to behave differently based on the object.</p>
+  <pre><code>// Parent class
+class Animal {
+    void makeSound() {
+        System.out.println("Some generic sound");
+    }
+}
+
+// Child class with overridden method
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Polymorphism: Animal reference, Cat object
+        Animal a = new Cat();
+
+        // Calls the overridden method
+        a.makeSound();
+    }
+}
+</code></pre>
+
+  <h3>5. Constructors</h3>
+  <p>A constructor initializes an object when it's created.</p>
+  <pre><code>// Class with a constructor
+public class Student {
+    String name;
+
+    // Constructor
+    Student(String studentName) {
+        name = studentName;
+    }
+
+    void sayHello() {
+        System.out.println("Hi, I'm " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create object with constructor
+        Student s = new Student("Don Kalos");
+
+        // Call method
+        s.sayHello();
+    }
+}
+</code></pre>
+
+</section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Java Mini Course. Daniel Mwangangi.</p>
+  </footer>
+</body>
+</html>
