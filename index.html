@@ -101,12 +101,22 @@
 </head>
 <body>
   <header>
+
+    <div style="text-align:center; margin: 15px;">
+  <button onclick="showAllModules()">Show All</button>
+  <button onclick="showModule(0)">Module 1</button>
+  <button onclick="showModule(1)">Module 2</button>
+  <button onclick="showModule(2)">Module 3</button>
+  <button onclick="showModule(3)">Module 4</button>
+  <button onclick="showModule(4)">Module 5</button>
+</div>
+
     <h1>Intro to Java - Beginner Mini Course</h1>
     <p>Learn Java step by step with simple explanations and practical code</p>
   </header>
 
   <main>
-  <section>
+  <section class="module">
     <h2>Module 1: Introduction to Java</h2>
     <p>Java is a high-level, class-based, object-oriented programming language. It is widely used due to its portability, performance, and security features.</p>
     <h3>Advantages of Java</h3>
@@ -132,9 +142,22 @@ public class HelloWorld {
         System.out.println("Hello, world!");
     }
 }</code></pre>
+
+    <section id="quiz-module-1">
+  <h2>Quick Quiz: Module 1</h2>
+
+  <p>What is Java mainly known for?</p>
+
+  <button onclick="checkAnswer(1, 'A')">A. Platform Independent</button><br><br>
+  <button onclick="checkAnswer(1, 'B')">B. Only for mobile apps</button><br><br>
+  <button onclick="checkAnswer(1, 'C')">C. A database system</button><br><br>
+
+  <p id="result1"></p>
+</section>
+
   </section>
 
-  <section>
+  <section class="module">
     <h2>Module 2: Variables and Data Types</h2>
     <p>Variables store data and are the building blocks of any program.</p>
     <h3>Common Data Types:</h3>
@@ -158,9 +181,22 @@ double price = 19.99;
 char grade = 'A';
 boolean isJavaFun = true;
 String name = "Alice";</code></pre>
+
+<section id="quiz-module-2">
+  <h2>Quick Quiz: Module 2</h2>
+
+  <p>Which of these is a correct data type in Java?</p>
+
+  <button onclick="checkAnswer(2, 'A')">A. int</button><br><br>
+  <button onclick="checkAnswer(2, 'B')">B. numberType</button><br><br>
+  <button onclick="checkAnswer(2, 'C')">C. varString</button><br><br>
+
+  <p id="result2"></p>
+</section>
+
   </section>
 
-<section>
+<section class="module">
   <h2>Module 3: Control Structures</h2>
   <p>Control structures let you control the flow of execution in your program using conditions and loops.</p>
 
@@ -286,10 +322,23 @@ for (int row = 1; row <= 5; row++) {
 </code></pre>
 
   <p><em>Tip:</em> Nested loops can be used for more complex tasks like working with 2D arrays or creating tables.</p>
+
+<section id="quiz-module-3">
+  <h2>Quick Quiz: Module 3</h2>
+
+  <p>Which loop runs at least once no matter what?</p>
+
+  <button onclick="checkAnswer(3, 'A')">A. do-while</button><br><br>
+  <button onclick="checkAnswer(3, 'B')">B. for loop</button><br><br>
+  <button onclick="checkAnswer(3, 'C')">C. enhanced loop</button><br><br>
+
+  <p id="result3"></p>
+</section>
+
 </section>
 
 
-<section>
+<section class="module">
   <h2>Module 4: Arrays</h2>
   <p>Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.</p>
 
@@ -327,10 +376,23 @@ for (int i = 0; i < fruits.length; i++) {
     <li>Array size is fixed after creation; you cannot change it later.</li>
     <li>Trying to access an index outside the array length causes an <code>ArrayIndexOutOfBoundsException</code>.</li>
   </ul>
+
+ <section id="quiz-module-4">
+  <h2>Quick Quiz: Module 4</h2>
+
+  <p>What is the first index of an array in Java?</p>
+
+  <button onclick="checkAnswer(4, 'A')">A. 0</button><br><br>
+  <button onclick="checkAnswer(4, 'B')">B. 1</button><br><br>
+  <button onclick="checkAnswer(4, 'C')">C. -1</button><br><br>
+
+  <p id="result4"></p>
+</section>
+
 </section>
 
 
-<section>
+<section class="module">
   <h2>Module 5: Object-Oriented Programming (OOP) Basics</h2>
   <p>OOP helps you organize code into reusable objects. It focuses on creating classes, objects, and using real-world concepts like inheritance, encapsulation, and polymorphism.</p>
 
@@ -479,6 +541,18 @@ public class Main {
 }
 </code></pre>
 
+<section id="quiz-module-5">
+  <h2>Quick Quiz: Module 5</h2>
+
+  <p>What does OOP stand for?</p>
+
+  <button onclick="checkAnswer(5, 'A')">A. Object Oriented Programming</button><br><br>
+  <button onclick="checkAnswer(5, 'B')">B. Open Output Process</button><br><br>
+  <button onclick="checkAnswer(5, 'C')">C. Object Operating Protocol</button><br><br>
+
+  <p id="result5"></p>
+</section>
+
 </section>
 
 
@@ -487,5 +561,48 @@ public class Main {
   <footer>
     <p>&copy; 2025 Java Mini Course. Daniel Mwangangi.</p>
   </footer>
+
+  <script>
+  
+  function showModule(moduleId) {
+  const modules = Array.from(document.querySelectorAll(".module"));
+
+  modules.forEach((module, index) => {
+    module.style.display = (index === moduleId) ? "block" : "none";
+  });
+}
+
+  
+
+// store correct answers per module
+const answers = {
+  1: "A",
+  2: "B",
+  3: "A",
+  4: "A",
+  5: "A"
+};
+
+const answered = {};
+let score = 0;
+
+function checkAnswer(module, answer) {
+  if (answered[module]) return;
+
+  answered[module] = true;
+
+  const result = document.getElementById("result" + module);
+
+  if (answers[module] === answer) {
+    score++;
+    result.innerText = "✅ Correct!";
+  } else {
+    result.innerText = "❌ Incorrect!";
+  }
+
+  result.innerText += ` | Score: ${score}/5`;
+}
+</script>
+
 </body>
 </html>
